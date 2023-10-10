@@ -9,14 +9,22 @@ export default function Home() {
 
   console.log(cells);
   
-
   return (
     <main className='container'>
       <div className='gameboard'>
         {cells.map((cell, index) => (
-          <Cell id={index} go={go} setGo={setGo} key={index} cells={cells} setCells={setCells} />
+          <Cell 
+            id={index}
+            go={go}
+            setGo={setGo}
+            key={index}
+            cells={cells}
+            setCells={setCells}
+            cell={cell}
+          />
         ))}
       </div>
+      <div>{`Its ${go} turn!`}</div>
     </main>
   )
 }

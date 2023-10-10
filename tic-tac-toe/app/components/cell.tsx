@@ -6,9 +6,10 @@ type CellProps = {
     setGo: Dispatch<SetStateAction<string>>;
     cells: string[];
     setCells: Dispatch<SetStateAction<string[]>>;
+    cell: string;
 }
 
-const Cell = ({ id, go, setGo, cells, setCells }: CellProps) => {
+const Cell = ({ id, go, setGo, cells, setCells, cell }: CellProps) => {
 
     const handelClick = () => {
         const notTaken = !cells[id];
@@ -32,7 +33,7 @@ const Cell = ({ id, go, setGo, cells, setCells }: CellProps) => {
 
     return (
         <div className="square" onClick={handelClick}>
-            
+            <div className={cell}>{cell ? (cell === "circle" ? "O" : "X") : ""}</div>
         </div>
     );
 };
